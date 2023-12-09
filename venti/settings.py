@@ -1,6 +1,7 @@
 import os
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from pathlib import Path
+import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,6 +27,7 @@ INSTALLED_APPS = [
     'articles',
     'authentication',
     'profiles',
+     'dj_database_url',
 
 #importing rest framwork applications for authentications and login and out 
     'rest_framework',
@@ -134,10 +136,9 @@ WSGI_APPLICATION = 'venti.wsgi.application'
 # #    }
 # # }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+  'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL', 'postgres://venti_user:rNNxCLK6YCNN1CppfvAgP71kE8jGr8Li@dpg-clqbnjggqk6s738rihlg-a.oregon-postgres.render.com/venti_db')
+    )
 }
 
 # Password validation
