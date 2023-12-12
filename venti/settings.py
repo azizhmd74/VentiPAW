@@ -137,7 +137,7 @@ WSGI_APPLICATION = 'venti.wsgi.application'
 # # }
 DATABASES = {
   'default': dj_database_url.config(
-      default=os.environ.get('DATABASE_URL', 'postgres://venti_user:rNNxCLK6YCNN1CppfvAgP71kE8jGr8Li@dpg-clqbnjggqk6s738rihlg-a.oregon-postgres.render.com/venti_db')
+      default=os.environ.get( 'postgres://venti_user:rNNxCLK6YCNN1CppfvAgP71kE8jGr8Li@dpg-clqbnjggqk6s738rihlg-a.oregon-postgres.render.com/venti_db')
    )
 }
 #DATABASES = {
