@@ -8,6 +8,13 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+# Cloudinary imports
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -28,6 +35,7 @@ INSTALLED_APPS = [
     'authentication',
     'profiles',
      'dj_database_url',
+    'cloudinary',
 
 #importing rest framwork applications for authentications and login and out 
     'rest_framework',
@@ -206,3 +214,13 @@ LOGOUT_URL = 'logout'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+cloudinary.config(
+cloud_name = "ddov12iy7",
+api_key = "356742567121426",
+api_secret = "pN9mH8T3xli6wNbzFBBGxJHFLE8",
+)
+
+
+
