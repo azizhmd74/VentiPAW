@@ -3,6 +3,8 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
+from cloudinary.models import CloudinaryField
+
 
 # from profiles.models import UserProfile
 class User(AbstractUser):
@@ -17,7 +19,7 @@ class User(AbstractUser):
     #numero_de_tel = PhoneNumberField(max_length=13,null=True)
     numero_de_tel = models.IntegerField(null=True)
     description = models.TextField(null=True)
-    photo_de_profile = models.ImageField(upload_to='profile/', null=True)
+    photo_de_profile = CloudinaryField('image')
     
 #relation avec userprofile table 
    # user_profile = models.OneToOneField(UserProfile, on_delete=models.CASCADE, default=None, null=True)
