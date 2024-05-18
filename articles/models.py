@@ -5,15 +5,18 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 
+from cloudinary.models import CloudinaryField
+
+
 #fonction bhh tgernerer l upload 
-def generate_upload_path(instance, filename):
+##def generate_upload_path(instance, filename):
     # Generate the upload path based on the current date
-    return 'article_photos/{}/{}/{}/{}'.format(
-        instance.uploaded_at.year,
-        instance.uploaded_at.month,
-        instance.uploaded_at.day,
-        filename
-    )
+  ##  return 'article_photos/{}/{}/{}/{}'.format(
+    ##    instance.uploaded_at.year,
+      ##  instance.uploaded_at.month,
+        ##instance.uploaded_at.day,
+        ##filename
+    ##)
 
 
 class Article(models.Model):
@@ -45,7 +48,7 @@ class Article(models.Model):
     description = models.TextField(null=True)
     categorie = models.CharField(max_length=20, choices=CATEGORIES)
     disponibilite = models.CharField(max_length=20,  null=True)#, choices=DISPONIBILITE_CHOICES, null=True)
-    photo = models.ImageField(upload_to='article_photos/%y/%m/%d')
+    photo = CloudinaryField('image')
     Etat = models.CharField(max_length=100, null=True)
     taille = models.CharField(max_length=100, choices=TAILLE_CHOICES, null=True)
     Date_cr = models.DateTimeField(auto_now_add=True, null=True)
