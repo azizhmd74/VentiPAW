@@ -156,7 +156,7 @@ WSGI_APPLICATION = 'venti.wsgi.application'
 # }
 
 # Set the database URL in the environment variables
-os.environ['DATABASE_URL'] = 'postgres://venti_user:rNNxCLK6YCNN1CppfvAgP71kE8jGr8Li@dpg-clqbnjggqk6s738rihlg-a.oregon-postgres.render.com/venti_db'
+os.environ['DATABASE_URL'] = 'postgres://venti_user:KQJq0fdsTeolqFyaetZxWVV5YxXbQ056@dpg-cp4c8h779t8c73ee186g-a.oregon-postgres.render.com/venti_db_eqf3'
 
 # Configure the DATABASES setting
 DATABASES = {
